@@ -13,7 +13,4 @@
 
 Route::get('/', function(){
     return view('layouts.layout');
-})->middleware('auth');
-
-Auth::routes();
-
+});
