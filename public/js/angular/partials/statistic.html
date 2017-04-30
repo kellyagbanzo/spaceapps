@@ -1,0 +1,63 @@
+<!--Cette vue n'a pas de controlleur. Il est appelé par la directive <statistic-dashboard> crée.-->
+
+<div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat2">
+            <div loader-css="ball-pulse-sync" ng-show="StatisticLoading"></div>
+            <div class="display" ng-hide ="StatisticLoading">
+                <div class="number">
+                    <h3 class="font-green-sharp" ng-model="statistic.gain"> {{gain ? gain : 0}}
+                        <small class="font-green-sharp">FCFA</small>
+                    </h3>
+                    <small>Gain journalier</small>
+
+                </div>
+                <div class="icon">
+                    <i class="fa fa-money"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat2">
+            <div loader-css="ball-pulse-sync" ng-show ="StatisticLoading"></div>
+            <div class="display" ng-hide ="StatisticLoading">
+                <div class="number">
+                    <h3 class="font-red-haze"> {{ stock_voiture ? stock_voiture : 0}} </h3>
+                    <small>Stock de voitures</small>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-car"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat2">
+            <div loader-css="ball-pulse-sync" ng-show ="StatisticLoading"></div>
+            <div class="display" ng-hide ="StatisticLoading">
+                <div class="number">
+                    <h3 class="font-blue-sharp"> {{ stock_moto ? stock_moto : 0 }} </h3>
+                    <small>Stock de Motos</small>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-motorcycle"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat2">
+            <div loader-css="ball-pulse-sync" ng-show ="StatisticLoading"></div>
+            <div class="display" ng-hide ="StatisticLoading">
+                <div class="number">
+                    <h3 class="font-purple-soft"> {{ employe_number ? employe_number : 0}} </h3>
+                    <small>Nombre d'employ&eacute;s</small>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-male"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

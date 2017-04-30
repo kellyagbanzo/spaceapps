@@ -1,0 +1,86 @@
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN EXAMPLE TABLE PORTLET-->
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-briefcase"></i>Gestionnaire des ventes journali&egrave;re
+                    </div>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse">
+                        </a>
+                        <a href="javascript:;" class="reload">
+                        </a>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    @if (Session::has('alerte'))
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="alert alert-danger">
+                                    <button class="close" data-close="alert"></button>
+                                    {{Session::get('alerte')}}
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                    @if (Session::has('message'))
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="alert alert-success">
+                                    <button class="close" data-close="alert"></button>
+                                    {{Session::get('message')}}
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                    <div class="table-toolbar">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="btn-group">
+                                    {{link_to_route('vente.create','Nouvelle Vente',null,['class'=>'btn green tooltips','data-original-title'=>'Ajouter'])}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-striped table-bordered table-hover dt-responsive" width="100%" id="liste">
+                        <thead>
+                        <tr>
+                            <th class="all text-center">Vente N&#176;</th>
+                            <th class="all text-center">Vendeur</th>
+                            <th class="all text-center">Produit</th>
+                            <th class="min-phone-l text-center">Quantit&eacute;</th>
+                            <th class="none text-center">Prix Unitaire</th>
+                            <th class="none text-center">Montant</th>
+                            <th class="all text-center">Heure</th>
+                            <th class="all text-center">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($ventes as $vente)
+                            <tr>
+                                <td class="text-center">{{$vente->id}}</td>
+                                <td class="text-center">{{$vente->name}}</td>
+                                <td class="text-center">{{$vente->libpro}}</td>
+                                <td class="text-center">{{$vente->qte}}</td>
+                                <td class="text-center">{{$vente->pu}}</td>
+                                <td class="text-center">{{$vente->montant}}</td>
+                                <td class="text-center">{{$vente->created_at->toTimeString()}}</td>
+                                <td class="col-md-2 text-center">
+                                    {!! Form::open(['route'=>['vente.destroy',$vente->id], 'method'=>'DELETE']) !!}
+                                    {{link_to_route('vente.edit','',[$vente->id],['class'=>'btn btn-xs blue tooltips glyphicon glyphicon-edit','data-container'=>'body','data-placement'=>'top'])}}
+                                    {!! Form::button('',['type'=>'submit','class'=>'btn btn-xs btn-danger tooltips glyphicon glyphicon-trash','data-container'=>'body','data-placement'=>'top']) !!}
+                                    {!! Form::close() !!}
+                                </td>
+                            </tr>
+                        @endforeach
+                        <?php //endforeach; endif; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- END EXAMPLE TABLE PORTLET-->
+        </div>
+    </div>
+

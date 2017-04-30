@@ -1,0 +1,53 @@
+<section class="small-section bg-gray-lighter">
+    <div class="container relative">
+
+        <form class="form align-center" id="mailchimp" novalidate="true">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+
+                    <div class="newsletter-label font-alt">
+                       Evaluez votre consommation d'energie pour des panneaux solaire adaptes a vos besoins
+                    </div>
+
+                    <div class="mb-20">
+                        <input type="text"  placeholder="nom de l'appareil" ng class="newsletter-field form-control input-md round mb-xs-10">
+                        <input type="number"  placeholder="puissance requise" ng-model='input.fields[$index]'  class="newsletter-field form-control input-md round mb-xs-10">
+                        <input ng-model="nbre" placeholder="Nombre d'appareil" class="newsletter-field form-control input-md round mb-xs-10" type="number" required="">
+
+                        <button ng-click="generate(nbre)" class="btn btn-mod btn-medium btn-round mb-xs-10">
+                            generer
+                        </button>
+                    </div>
+
+                    <div id="subscribe-result"></div>
+
+                </div>
+            </div>
+            <div ng-show="showField" ng-init="champnum=0">
+
+                <div class="row" ng-repeat="fieldNumber in fieldNumbers track by $index" >
+                    <div class="col-md-8 col-md-offset-2">
+                        <input type="text"  placeholder="nom de l'appareil" class="newsletter-field form-control input-md round mb-xs-10">
+                        <input type="number"  placeholder="puissance requise" ng-model='input.fields[$index]'  class="newsletter-field form-control input-md round mb-xs-10">
+                    </div>
+                </div>
+
+                <div class="row" >
+                    <div class="col-md-6 col-md-offset-3">
+
+                        <input type="button" ng-click="reinitialiser()" class="btn btn-mod btn-medium btn-round mb-xs-10 mt-20 pull-left" value="annuler">
+                        <input type="button" ng-click="evaluer()" class="btn btn-mod btn-medium btn-round mb-xs-10 mt-20 pull-right" value="evaluer">
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </form>
+
+
+    </div>
+</section>
+
+
