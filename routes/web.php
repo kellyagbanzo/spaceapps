@@ -14,6 +14,3 @@
 Route::get('/', function(){
     return view('layouts.layout');
 });
-
-Auth::routes();
-
