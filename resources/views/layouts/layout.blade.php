@@ -4,7 +4,7 @@
 <!-- Mirrored from rhythm.bestlooker.pro/mp-index-05.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Jul 2016 12:13:57 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
-    <title>Rhythm &mdash; One & Multi Page Creative Theme</title>
+    <title>Suntech</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta charset="utf-8">
@@ -66,7 +66,6 @@
                     <div class="local-scroll">
                         <a href="#/panneaux" class="btn btn-mod btn-border-w btn-medium btn-round hidden-xs">Panneaux </a>
                         <span class="hidden-xs">&nbsp;</span>
-                        <a href="#/optimisation" class="btn btn-mod btn-border-w btn-medium btn-round lightbox mfp-iframe">Optimisation</a>
                     </div>
 
                 </div>

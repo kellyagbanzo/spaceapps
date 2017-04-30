@@ -10,8 +10,7 @@
                     </div>
 
                     <div class="mb-20">
-                        <input type="text"  placeholder="nom de l'appareil" ng class="newsletter-field form-control input-md round mb-xs-10">
-                        <input type="number"  placeholder="puissance requise" ng-model='input.fields[$index]'  class="newsletter-field form-control input-md round mb-xs-10">
+
                         <input ng-model="nbre" placeholder="Nombre d'appareil" class="newsletter-field form-control input-md round mb-xs-10" type="number" required="">
 
                         <button ng-click="generate(nbre)" class="btn btn-mod btn-medium btn-round mb-xs-10">
@@ -23,11 +22,11 @@
 
                 </div>
             </div>
-            <div ng-show="showField" ng-init="champnum=0">
+            <div ng-show="showField">
 
                 <div class="row" ng-repeat="fieldNumber in fieldNumbers track by $index" >
-                    <div class="col-md-8 col-md-offset-2">
-                        <input type="text"  placeholder="nom de l'appareil" class="newsletter-field form-control input-md round mb-xs-10">
+                    <div class="col-md-8 col-md-offset-2 mb-10">
+                        <input type="text"  placeholder="nom de l'appareil" class="newsletter-field form-control input-md round mb-xs-10 ">
                         <input type="number"  placeholder="puissance requise" ng-model='input.fields[$index]'  class="newsletter-field form-control input-md round mb-xs-10">
                     </div>
                 </div>
@@ -41,7 +40,11 @@
                     </div>
                 </div>
 
+            </div>
 
+            <div class="newsletter-label font-alt mt-20" ng-show="reponse">
+                <i class="fa fa-info-circle"></i> Nous vous recommandons de prendre des panneaux solaires generant au minimum {{energieTotal}} Kwatt d'energie soit
+                {{energieTotalConvertit}} Volts d'energie thermique couvrant ainsi une superficie de {{superficie}} m <sup>2</sup>.
             </div>
 
         </form>

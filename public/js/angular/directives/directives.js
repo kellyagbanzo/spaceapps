@@ -4,14 +4,14 @@
  =====================================================
  */
 
-ApplicationMdl.directive('statisticDashboard', function( $http, API_URL ) {
+ApplicationMdl.directive('showTable', function( ) {
 
     return {
 
         restrict: 'E',
 
         scope: {
-            refreshstatistic: '='
+            addrow: '='
         },
 
         templateUrl: 'js/angular/partials/statistic.html',
